@@ -5,8 +5,17 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Create user object baised on FirebaseUser
-  User? _userFromFirebaseUser(FirebaseUser user) {
-    return user != null ? User(uid: user.uid) : null;
+  User _userFromFirebaseUser(FirebaseUser user) {
+    if (user != null) {
+      return User(uid: user.uid);
+    } else {
+      return null;
+    }
+    // return user != null ? User(uid: user.uid) : null;
+  }
+
+  Stream<User> get user {
+    return _auth.onAuthStateChanged.map(_userFromFirebaseUser);
   }
 
   // Sign in anon

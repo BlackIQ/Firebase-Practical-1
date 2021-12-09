@@ -13,11 +13,6 @@ class _CafeListState extends State<CafeList> {
   @override
   Widget build(BuildContext context) {
     final cafes = Provider.of<List<Cafe>>(context);
-    // cafes.forEach((cafe) {
-    //   print(cafe.name);
-    //   print(cafe.sugar);
-    //   print(cafe.strength);
-    // });
 
     return ListView.builder(
       itemCount: cafes.length,

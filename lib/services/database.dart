@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:learnfirebase/models/cafe.dart';
+import 'package:learnfirebase/models/user.dart';
 
 class DatabaseServer {
   DatabaseServer({this.uid});
@@ -27,7 +28,20 @@ class DatabaseServer {
     }).toList();
   }
 
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      name: snapshot.data['name'],
+      sugars: snapshot.data['sugar'],
+      strength: snapshot.data['strength'],
+    );
+  }
+
   Stream<List<Cafe>> get cafes {
     return cafeCollection.snapshots().map(_cafeListFromSnapshot);
+  }
+
+  Stream<UserData> get userData {
+    return cafeCollection.document(uid).snapshots().map(_userDataFromSnapshot);
   }
 }

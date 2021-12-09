@@ -58,7 +58,32 @@ class _LoginState extends State<Login> {
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () async {
-                    await _auth.loginWithEmail(_email.text, _password.text);
+                    dynamic result = await _auth.loginWithEmail(_email.text, _password.text);
+                    if (result.runtimeType == List) {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Something went wrong'),
+                            content: SingleChildScrollView(
+                              child: Text(
+                                result[1],
+                              ),
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                child: Text('Ok'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    } else {
+                      Navigator.of(context).pop(context);
+                    }
                   },
                   child: Text('Login'),
                 ),

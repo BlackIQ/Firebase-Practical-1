@@ -13,6 +13,7 @@ class _RegisterState extends State<Register> {
 
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  TextEditingController _name = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,15 @@ class _RegisterState extends State<Register> {
             ),
             SizedBox(height: 20),
             TextField(
+              controller: _name,
+              decoration: InputDecoration(
+                labelText: 'Name',
+                hintText: 'Jon Due',
+              ),
+              obscureText: false,
+            ),
+            SizedBox(height: 10),
+            TextField(
               controller: _email,
               decoration: InputDecoration(
                 labelText: 'Email',
@@ -58,7 +68,7 @@ class _RegisterState extends State<Register> {
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () async {
-                    dynamic result = await  _auth.registerWithEmail(_email.text, _password.text);
+                    dynamic result = await  _auth.registerWithEmail(_name.text, _email.text, _password.text);
                     if (result.runtimeType == List) {
                       showDialog(
                         context: context,

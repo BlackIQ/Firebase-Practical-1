@@ -18,6 +18,7 @@ class CafeTile extends StatelessWidget {
           radius: 25,
           backgroundColor: Colors.brown[cafe.strength],
         ),
+        trailing: Text('☕'),
         title: Text(cafe.name),
         subtitle: Text(cafe.sugar.toString()),
       ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:learnfirebase/screens/authenticate/login.dart';
 import 'package:learnfirebase/screens/authenticate/register.dart';
 import 'package:learnfirebase/services/auth.dart';
-import 'package:learnfirebase/shared/loading.dart';
 
 class Authenticate extends StatefulWidget {
   @override
@@ -40,13 +39,14 @@ class _AuthenticateState extends State<Authenticate> {
             SizedBox(height: 20),
             Center(
               child: Text(
-                'Login in to your account',
+                'Choose your way to authenticate',
                 style: TextStyle(
                   fontSize: 20,
+                  color: Colors.brown,
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 50),
             // Container(
             //   height: 50,
             //   child: ElevatedButton(

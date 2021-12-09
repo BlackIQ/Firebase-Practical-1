@@ -11,18 +11,8 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
 
-  String email = '';
-  String password = '';
-
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
-
-  void submit() {
-    setState(() {
-      email = _email.text;
-      password = _password.text;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +57,9 @@ class _RegisterState extends State<Register> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 ElevatedButton(
-                  onPressed: submit,
+                  onPressed: () {
+                    _auth.registerWithEmail(_email.text, _password.text);
+                  },
                   child: Text('Create'),
                 ),
                 FlatButton(

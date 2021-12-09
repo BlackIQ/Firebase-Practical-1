@@ -66,6 +66,19 @@ class AuthService {
     }
   }
 
+  // Future signInGoogle() async {
+  //   try {
+  //     // AuthResult result = await _auth.sign
+  //     FirebaseUser user = result.user;
+  //     return _userFromFirebaseUser(user);
+  //   } catch (e) {
+  //     return [
+  //       null,
+  //       e.toString()
+  //     ];
+  //   }
+  // }
+
   // sign out
   Future signOut() async {
     try {

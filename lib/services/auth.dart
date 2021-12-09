@@ -30,7 +30,18 @@ class AuthService {
     }
   }
 
-// Sign in with email
-// sign up with email
-// sign out
+  // Sign in with email
+
+  // sign up with email
+
+  // sign out
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
 }

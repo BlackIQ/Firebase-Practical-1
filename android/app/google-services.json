@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "6018074309",
+    "project_id": "learn-firebase-24bc8",
+    "storage_bucket": "learn-firebase-24bc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6018074309:android:0fb07bfd4ea0a5b4e412ac",
+        "android_client_info": {
+          "package_name": "ir.blackiq.firebase.learnfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6018074309-h6nliemjnmqkb23h7b914i7s1i901529.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFfmyMotkrSt8q_aq2cQhB0M-aGNlEGqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6018074309-h6nliemjnmqkb23h7b914i7s1i901529.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

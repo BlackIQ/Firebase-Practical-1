@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnfirebase/screens/authenticate/login.dart';
 import 'package:learnfirebase/screens/authenticate/register.dart';
 import 'package:learnfirebase/services/auth.dart';
+import 'package:learnfirebase/shared/loading.dart';
 
 class Authenticate extends StatefulWidget {
   @override
@@ -11,10 +12,11 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
 
   final AuthService _auth = AuthService();
+  bool loading = true;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text('Welcome'),

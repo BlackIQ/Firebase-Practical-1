@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:learnfirebase/services/auth.dart';
+import 'package:learnfirebase/services/auth.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -8,12 +8,13 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
 
-  // final AuthService _auth = AuthService();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Buy cafe'),
         elevation: 0,
       ),
@@ -45,7 +46,16 @@ class _SignInState extends State<SignIn> {
             Container(
               height: 50,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  dynamic result = await _auth.signInAnon();
+                  if (result == null) {
+                    print('Error.');
+                  }
+                  else {
+                    print('Signed in.');
+                    print(result.uid);
+                  }
+                },
                 child: Text('Sign in Anonymously'),
               ),
             ),

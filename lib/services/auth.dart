@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:learnfirebase/models/user.dart';
+import 'package:learnfirebase/services/database.dart';
 
 class AuthService {
+  // Instance Firebase
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Create user object baised on FirebaseUser
@@ -57,6 +59,10 @@ class AuthService {
         password: password,
       );
       FirebaseUser user = result.user;
+
+      // Create document
+      await DatabaseServer(uid: user.uid).updateUserData('0', 'Name Last', 5);
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       return [
@@ -65,19 +71,6 @@ class AuthService {
       ];
     }
   }
-
-  // Future signInGoogle() async {
-  //   try {
-  //     // AuthResult result = await _auth.sign
-  //     FirebaseUser user = result.user;
-  //     return _userFromFirebaseUser(user);
-  //   } catch (e) {
-  //     return [
-  //       null,
-  //       e.toString()
-  //     ];
-  //   }
-  // }
 
   // sign out
   Future signOut() async {

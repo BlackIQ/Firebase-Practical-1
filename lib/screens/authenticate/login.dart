@@ -17,6 +17,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
         centerTitle: true,
         title: Text('Login to your account'),

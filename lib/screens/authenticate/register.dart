@@ -18,6 +18,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
         centerTitle: true,
         title: Text('Register an account'),

@@ -17,6 +17,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
         centerTitle: true,
         title: Text('Welcome'),

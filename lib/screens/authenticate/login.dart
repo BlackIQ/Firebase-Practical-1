@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                   },
                   child: Text('Login'),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     Navigator.of(context).pop(context);
                     Navigator.of(context).push(

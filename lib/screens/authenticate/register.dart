@@ -87,7 +87,7 @@ class _RegisterState extends State<Register> {
                   },
                   child: Text('Create'),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     Navigator.of(context).pop(context);
                     Navigator.of(context).push(

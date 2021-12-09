@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnfirebase/services/auth.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,6 +7,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +19,9 @@ class _HomeState extends State<Home> {
         elevation: 0,
         actions: [
           FlatButton(
-            onPressed: () {},
+            onPressed: () async {
+              await _auth.signOut();
+            },
             child: Text(
               'Logout',
               style: TextStyle(

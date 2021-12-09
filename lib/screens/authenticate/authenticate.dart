@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learnfirebase/screens/authenticate/login.dart';
 import 'package:learnfirebase/screens/authenticate/register.dart';
@@ -12,11 +13,10 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
 
   final AuthService _auth = AuthService();
-  bool loading = true;
 
   @override
   Widget build(BuildContext context) {
-    return loading ? Loading() : Scaffold(
+    return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text('Welcome'),

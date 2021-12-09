@@ -57,8 +57,8 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 ElevatedButton(
-                  onPressed: () {
-                    _auth.loginWithEmail(_email.text, _password.text);
+                  onPressed: () async {
+                    await _auth.loginWithEmail(_email.text, _password.text);
                   },
                   child: Text('Login'),
                 ),

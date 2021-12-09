@@ -57,8 +57,8 @@ class _RegisterState extends State<Register> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 ElevatedButton(
-                  onPressed: () {
-                    _auth.registerWithEmail(_email.text, _password.text);
+                  onPressed: () async {
+                  await  _auth.registerWithEmail(_email.text, _password.text);
                   },
                   child: Text('Create'),
                 ),

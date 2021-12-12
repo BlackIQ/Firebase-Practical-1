@@ -47,41 +47,41 @@ class _AuthenticateState extends State<Authenticate> {
               ),
             ),
             SizedBox(height: 50),
-            // Container(
-            //   height: 50,
-            //   child: ElevatedButton(
-            //     onPressed: () async {
-            //       dynamic result = await _auth.signInAnon();
-            //       if (result.runtimeType == List) {
-            //         showDialog(
-            //           context: context,
-            //           builder: (BuildContext context) {
-            //             return AlertDialog(
-            //               title: Text('Something went wrong'),
-            //               content: SingleChildScrollView(
-            //                 child: Text(
-            //                   result[1],
-            //                 ),
-            //               ),
-            //               actions: <Widget>[
-            //                 TextButton(
-            //                   child: Text('Ok'),
-            //                   onPressed: () {
-            //                     Navigator.of(context).pop();
-            //                   },
-            //                 ),
-            //               ],
-            //             );
-            //           },
-            //         );
-            //       } else {
-            //         Navigator.of(context).pop(context);
-            //       }
-            //     },
-            //     child: Text('Sign in Anonymously'),
-            //   ),
-            // ),
-            // SizedBox(height: 10),
+            Container(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () async {
+                  dynamic result = await _auth.signInAnon();
+                  if (result.runtimeType == List) {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Something went wrong'),
+                          content: SingleChildScrollView(
+                            child: Text(
+                              result[1],
+                            ),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('Ok'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  } else {
+                    Navigator.of(context).pop(context);
+                  }
+                },
+                child: Text('Sign in Anonymously'),
+              ),
+            ),
+            SizedBox(height: 10),
             Container(
               height: 50,
               child: ElevatedButton(

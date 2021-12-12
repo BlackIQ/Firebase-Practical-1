@@ -20,10 +20,10 @@ Simple Firebase practical project.
 
 ### Images
 
-- *Landing page*
+- *Firebase Authentications*
 ![Auth Page](docs/pack/images/auth_page.png)
 
-- *Home page*
+- *Cloud Firestore*
 ![DB Page](docs/pack/images/db-page.png)
 
 - *Landing page*

@@ -48,6 +48,7 @@ In next project we will learn some new authentication ways and get deep in Fires
 - Flutter
   - Alert dialog for logout
   - Bottom navigation bar
+  - Using GoogleFonts
   - Settings to show user image and other stuff
 - Firebase setup
   - Setup for iOS
